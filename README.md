@@ -8,9 +8,10 @@ Source: [YouTube Video](https://www.youtube.com/watch?v=LHNtL4zDBuk&list=PLQ5j-F
 ## Check both Zookeeper and Kafka are up and running
 ```docker ps```
 
-## Create a Kafka topic
-```cd opt/kafka_2.13-2.8.1/bin```
-```kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages```
+## Enter Kafka container shell and create a new topic
+```docker exec -it kafka /bin/sh```  
+```cd opt/kafka_2.13-2.8.1/bin```  
+```kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages```  
 
 ## Create a new Python project in Pycharm, install kafka-python
 ```pip install kafka-python```
